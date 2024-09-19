@@ -3,18 +3,30 @@ package com.example.project;
 public class TipCalculator {
     //WRITE YOUR PROGRAM IN calculateTip
     public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
-        //DO NOT DELETE ANY OF THE CODE BELOW      
+        double newCost = cost * (1 + percent/100.0);
+        newCost = Math.round(newCost * 100.0) / 100.0; //https://www.educative.io/answers/how-to-use-the-java-mathround-method
+        double totalTip = newCost - cost;
+
+
+        //DO NOT DELETE ANY OF THE CODE BELOW     
         StringBuilder result = new StringBuilder();
 
                        
         result.append("-------------------------------\n");
-        result.append("Total bill before tip: "); //concatenate to this string. DO NOT ERASE AND REWRITE
+        result.append("Total bill before tip: " ); //concatenate to this string. DO NOT ERASE AND REWRITE
+        result.append(cost + "\n" );
         result.append("Total percentage: ");
+        result.append(percent + "%\n" );
         result.append("Total tip: ");
+        result.append( totalTip+ "\n" );
         result.append("Total Bill with tip: ");
+        result.append(newCost + "\n");
         result.append("Per person cost before tip: ");
+        result.append(cost / people + "\n" );
         result.append("Tip per person: ");
+        result.append(totalTip / people + "\n");
         result.append("Total cost per person: ");
+        result.append(newCost / people + "\n" );
         result.append("-------------------------------\n");
 
 
@@ -23,9 +35,9 @@ public class TipCalculator {
      //TEST YOUR PROGRAM IN main
      public static void main(String[] args) {
         //try different values for people, percent, and cost to test your program before running test cases
-        int people; 
-        int percent;
-        double cost;              
+        int people = 6; 
+        int percent = 25;
+        double cost = 52.27;              
         System.out.println(calculateTip(people,percent,cost));
     }
 }
