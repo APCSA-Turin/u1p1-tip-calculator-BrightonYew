@@ -6,7 +6,8 @@ public class TipCalculator {
         double newCost = cost * (1 + percent/100.0);
         newCost = Math.round(newCost * 100.0) / 100.0; //https://www.educative.io/answers/how-to-use-the-java-mathround-method
         double totalTip = newCost - cost;
-
+        double perPersonBeforTip = Math.round(cost / people * 100.0) / 100.0;
+        double tipPerPerson = Math.round(totalTip / people * 100.0) / 100.0;
 
         //DO NOT DELETE ANY OF THE CODE BELOW     
         StringBuilder result = new StringBuilder();
@@ -22,9 +23,9 @@ public class TipCalculator {
         result.append("Total Bill with tip: ");
         result.append(newCost + "\n");
         result.append("Per person cost before tip: ");
-        result.append(cost / people + "\n" );
+        result.append(perPersonBeforTip + "\n" );
         result.append("Tip per person: ");
-        result.append(totalTip / people + "\n");
+        result.append(tipPerPerson + "\n");
         result.append("Total cost per person: ");
         result.append(newCost / people + "\n" );
         result.append("-------------------------------\n");
