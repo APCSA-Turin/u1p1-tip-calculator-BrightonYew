@@ -1,8 +1,15 @@
+import java.util.Scanner;
+
 package com.example.project;
 
-public class TipCalculator {
+public class extraCredit {
     //WRITE YOUR PROGRAM IN calculateTip
     public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter an item name or type '-1' to finish:");
+        
+
         double unroundedCost = cost * (1 + percent/100.0);
         double newCost = Math.round(unroundedCost * 100.0) / 100.0; //https://www.educative.io/answers/how-to-use-the-java-mathround-method
         double totalTip = Math.round((newCost - cost) * 100.0) / 100.0;
@@ -33,6 +40,7 @@ public class TipCalculator {
 
 
         return result.toString();
+        scan.close();
     }
      //TEST YOUR PROGRAM IN main
      public static void main(String[] args) {
@@ -44,3 +52,4 @@ public class TipCalculator {
     }
 }
         
+
