@@ -3,7 +3,8 @@ package com.example.project;
 public class TipCalculator {
     //WRITE YOUR PROGRAM IN calculateTip
     public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
-        double unroundedCost = cost * (1 + percent/100.0);
+        //establishing variables for the printing
+        double unroundedCost = cost * (1 + percent/100.0); //this is used in the totalcostperperson, due to rounding errors
         double newCost = Math.round(unroundedCost * 100.0) / 100.0; //https://www.educative.io/answers/how-to-use-the-java-mathround-method
         double totalTip = Math.round((newCost - cost) * 100.0) / 100.0;
         double perPersonBeforTip = Math.round(cost / people * 100.0) / 100.0;
@@ -13,8 +14,8 @@ public class TipCalculator {
         //DO NOT DELETE ANY OF THE CODE BELOW     
         StringBuilder result = new StringBuilder();
 
-                       
-        result.append("-------------------------------\n");
+        //printing the receipt
+        result.append("-------------------------------\n"); // the \n indents
         result.append("Total bill before tip: " ); //concatenate to this string. DO NOT ERASE AND REWRITE
         result.append("$" + cost + "\n" );
         result.append("Total percentage: ");

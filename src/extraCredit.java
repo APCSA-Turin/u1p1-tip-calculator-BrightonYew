@@ -14,6 +14,7 @@ public class extraCredit {
         itemlist = list.add (scan.nextLine());
         }
 
+        index.of itemlist;
         
         
 
