@@ -4,10 +4,17 @@ package com.example.project;
 
 public class extraCredit {
     //WRITE YOUR PROGRAM IN calculateTip
-    public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
+        public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
         Scanner scan = new Scanner(System.in);
 
+        String itemName;
+        list itemlist;
+        While (itemName !=-1); {
         System.out.println("Enter an item name or type '-1' to finish:");
+        itemlist = list.add (scan.nextLine());
+        }
+
+        
         
 
         double unroundedCost = cost * (1 + percent/100.0);
